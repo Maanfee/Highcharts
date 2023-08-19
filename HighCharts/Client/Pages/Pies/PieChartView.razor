@@ -1,0 +1,63 @@
+﻿@page "/PieChartView"
+
+<PageTitle>PieChartView</PageTitle>
+
+<div id="HighCharts"></div>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var Config = new ChartConfiguration()
+            {
+                Chart = new ChartConfiguration.Charts
+                {
+                    Type = Maanfee.Highcharts.ChartType.Pie,
+                },
+                Title = new Title()
+                {
+                    Text = "Corn vs wheat estimated production for 2023",
+                    Align = ChartAlign.Center,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                SubTitle = new SubTitle
+                {
+                    Text = "aaa",
+                    Align = ChartAlign.Left,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                Tooltip = new Tooltip
+                {
+                    ValueSuffix = " (1000 MT)",
+                },
+                PlotOptions = new PlotOptions
+                {
+                    Pie = new PlotOptions.Pies
+                    {
+                        AllowPointSelect = true,
+                        Cursor = Cursor.Pointer,
+                        DataLabels = new PlotOptions.Pies.DataLabel
+                        {
+                            Enabled = true,
+                            Format = "<b>{point.name}</b>: {point.percentage:.1f} %",
+                        }
+                    }
+                },
+                Series = new List<Series>()
+                {
+                     new Series
+                     {
+                          Name = "Corn",
+                          ColorByPoint = true,
+                          Data = new List<object> () { 406292, 260000, 107000, 68300, 27500, 406292 },
+                     },
+                },
+
+            };
+
+        await Chart.InitAsync("HighCharts").GenerateAsync<ChartConfiguration>(Config, false);
+
+    }
+
+}
+

@@ -1,0 +1,84 @@
+﻿@page "/BasicColumnView"
+
+<PageTitle>BasicColumnView</PageTitle>
+
+<div id="HighCharts"></div>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var Config = new ChartConfiguration()
+            {
+                Chart = new ChartConfiguration.Charts
+                {
+                    Type = Maanfee.Highcharts.ChartType.Column,
+                    //Style = new ChartConfiguration.Charts.Styles
+                    //{
+                    //    FontFamily = "BYekan",
+                    //},
+                },
+                Title = new Title()
+                {
+                    Text = "Corn vs wheat estimated production for 2023",
+                    //Text = "تست فونت فارسی",
+                    Align = ChartAlign.Center,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                SubTitle = new SubTitle
+                {
+                    Text = "aaa",
+                    Align = ChartAlign.Left,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                XAxis = new XAxis
+                {
+                    Categories = new List<object> { "USA", "China", "Brazil", "EU", "India", "Iran" },
+                    Crosshair = true,
+                    Accessibility = new XAxis.Accessibilities
+                    {
+                        Description = "Countries",
+                    }
+                },
+                YAxis = new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxis.AxisTitle
+                    {
+                        Text = "1000 metric tons (MT) !",
+                    }
+                },
+                Tooltip = new Tooltip
+                {
+                    ValueSuffix = " (1000 MT)",
+                },
+                PlotOptions = new PlotOptions
+                {
+                    Column = new PlotOptions.Columns
+                    {
+                        PointPadding = 0.2F,
+                        BorderWidth = 1,
+                        ColorByPoint = false,
+                    },
+                },
+                Series = new List<Series>()
+                {
+                     new Series
+                     {
+                          Name = "Corn",
+                          Data = new List<object> () { 406292, 260000, 107000, 68300, 27500, 406292 },
+                     },
+                     new Series
+                     {
+                          Name = "Wheat",
+                          Data = new List<object> () { 51086, 136000, 5500, 141000, 107180, 206292 },
+                     },
+                },
+
+            };
+
+        await Chart.InitAsync("HighCharts").GenerateAsync<ChartConfiguration>(Config, false);
+
+    }
+
+}
