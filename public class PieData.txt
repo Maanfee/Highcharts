@@ -1,0 +1,14 @@
+  public class PieData
+        {
+            [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+            public string Name { get; set; }
+
+            [JsonProperty("y", NullValueHandling = NullValueHandling.Ignore)]
+            public float Y { get; set; }
+
+            [JsonProperty("sliced", NullValueHandling = NullValueHandling.Ignore)]
+            public bool Sliced { get; set; }
+
+            [JsonProperty("selected", NullValueHandling = NullValueHandling.Ignore)]
+            public bool Selected { get; set; }
+        }

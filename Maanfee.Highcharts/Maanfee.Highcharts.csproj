@@ -11,7 +11,7 @@
 		<RunAnalyzers>false</RunAnalyzers>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<!--**********************************************-->
-		<Version>0.14.3</Version>
+		<Version>0.15.3</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

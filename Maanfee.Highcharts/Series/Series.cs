@@ -16,9 +16,6 @@ namespace Maanfee.Highcharts
         [JsonProperty("pointPlacement", NullValueHandling = NullValueHandling.Ignore)]
         public string PointPlacement { get; set; }
 
-        [Browsable(true)]
-        [Display(Name = "Employee Name")]
-        [Category("Pie")]
         [Description("Pie")]
         [JsonProperty("colorByPoint", NullValueHandling = NullValueHandling.Ignore)]
         public bool ColorByPoint { get; set; } 

@@ -19,6 +19,18 @@ namespace Maanfee.Highcharts
 
             [JsonProperty("colorByPoint", NullValueHandling = NullValueHandling.Ignore)]
             public bool ColorByPoint { get; set; } = false;
+
+            [JsonProperty("dataLabels", NullValueHandling = NullValueHandling.Ignore)]
+            public DataLabel DataLabels { get; set; }
+
+            public class DataLabel
+            {
+                [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
+                public bool Enabled { get; set; } = false;
+
+                [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
+                public string Format { get; set; }
+            }
         }
 
         #endregion
@@ -40,6 +52,9 @@ namespace Maanfee.Highcharts
             {
                 [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
                 public bool Enabled { get; set; } = false;
+
+                [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
+                public string Format { get; set; }
             }
         }
 
