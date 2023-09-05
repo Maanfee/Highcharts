@@ -43,7 +43,17 @@ namespace Maanfee.Highcharts
 
         public async Task GenerateAsync<T>(ChartConfiguration chart, bool IsDefaultFont)
         {
-            var ChartOptions = JsonSerializer.Serialize(chart, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull });
+            var ChartOptions = JsonSerializer.Serialize(chart, new JsonSerializerOptions()
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+            });
+            ChartOptions = ChartOptions.Replace("pieSeries", "series");
+            ChartOptions = ChartOptions.Replace("lineSeries", "series");
+            ChartOptions = ChartOptions.Replace("columnSeries", "series");
+            ChartOptions = ChartOptions.Replace(",\"series\":[]", "");
+
+            ChartOptions = ChartOptions.Replace("subTitle", "subtitle");
 
             var Module = await moduleTask.Value;
             await Module.InvokeVoidAsync("Generate", ChartOptions, IsDefaultFont);

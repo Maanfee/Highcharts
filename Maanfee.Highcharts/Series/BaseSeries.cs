@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace Maanfee.Highcharts
 {
-    public class Series
+    public abstract class BaseSeries 
     {
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -15,10 +12,5 @@ namespace Maanfee.Highcharts
 
         [JsonProperty("pointPlacement", NullValueHandling = NullValueHandling.Ignore)]
         public string PointPlacement { get; set; }
-
-        [Description("Pie")]
-        [JsonProperty("colorByPoint", NullValueHandling = NullValueHandling.Ignore)]
-        public bool ColorByPoint { get; set; } 
-
     }
 }

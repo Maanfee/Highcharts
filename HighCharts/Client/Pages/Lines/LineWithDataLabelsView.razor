@@ -1,7 +1,7 @@
 ﻿@page "/LineWithDataLabelsView"
-<PageTitle>LineWithDataLabelsView</PageTitle>
+<PageTitle>Line With Data Labels View</PageTitle>
 
-<div id="HighCharts"></div>
+<HighChartsContainer Id="HighCharts" />
 
 @code {
 
@@ -21,7 +21,7 @@
                 },
                 SubTitle = new SubTitle
                 {
-                    Text = "Source: <a target='_blank' href='https://www.Maanfee.com'>Maanfee</a>",
+                    Text = "<p style='color:#DC143C'>Maanfee</p>",
                     Align = ChartAlign.Center,
                     VerticalAlign = ChartVerticalAlign.Top,
                 },
@@ -61,24 +61,24 @@
                         PointPlacement = ChartSeriesPointPlacement.On,
                     },
                 },
-                Series = new List<Series>()
+                LineSeries = new List<LineSeries>()
                 {
-                     new Series
+                     new LineSeries
                      {
                           Name = "Corn",
                           Data = new List<object> () { 406292, 260000, 107000, 68300, 27500, 406292 },
                      },
-                     new Series
+                     new LineSeries
                      {
                           Name = "Wheat",
                           Data = new List<object> () { 51086, 136000, 5500, 141000, 107180, 206292 },
                      },
                 },
+                //WindSpeed = 10,
 
             };
 
         await Chart.InitAsync("HighCharts").GenerateAsync<ChartConfiguration>(Config);
-
     }
 
 }

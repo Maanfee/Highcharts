@@ -41,8 +41,6 @@ export function Generate(chartOptions, IsDefaultFont) {
         if (!IsDefaultFont) {
 
             const fontFamily = window.getComputedStyle(document.getElementById(selector)).fontFamily;
-            //const fontFamily = window.getComputedStyle(document.getElementsByTagName('body')[0]).fontFamily;
-            // BYekan
 
             let AllHighcharts = document.getElementsByClassName('highcharts-root');
             Array.from(AllHighcharts).forEach((el) => {

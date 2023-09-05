@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Maanfee.Highcharts
 {
-    public class ChartConfiguration
+    public class ChartConfiguration 
     {
         #region - Chart Class -
 
@@ -48,9 +49,14 @@ namespace Maanfee.Highcharts
         [JsonProperty("plotOptions", NullValueHandling = NullValueHandling.Ignore)]
         public PlotOptions PlotOptions { get; set; }
 
-        [JsonProperty("series", NullValueHandling = NullValueHandling.Ignore)]
-        public IEnumerable<Series> Series { get; set; } = new List<Series>();
+        [JsonProperty("columnSeries", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ColumnSeries> ColumnSeries { get; set; } = new List<ColumnSeries>();
 
-       
+        [JsonProperty("lineSeries", NullValueHandling = NullValueHandling.Ignore)]
+        public List<LineSeries> LineSeries { get; set; } = new List<LineSeries>();
+
+        [JsonProperty("pieSeries", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PieSeries> PieSeries { get; set; } = new List<PieSeries>();
+
     }
 }

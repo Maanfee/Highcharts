@@ -3,12 +3,11 @@ using System.ComponentModel;
 
 namespace Maanfee.Highcharts
 {
-    public class PieSeri 
+    public class PieSeries
     {
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
-        [Description("Pie")]
         [JsonProperty("colorByPoint", NullValueHandling = NullValueHandling.Ignore)]
         public bool ColorByPoint { get; set; }
 
@@ -28,6 +27,7 @@ namespace Maanfee.Highcharts
 
             [JsonProperty("selected", NullValueHandling = NullValueHandling.Ignore)]
             public bool Selected { get; set; }
+
         }
     }
 }

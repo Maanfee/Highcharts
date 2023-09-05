@@ -84,6 +84,15 @@ namespace Maanfee.Highcharts
                 [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
                 public string Format { get; set; }
             }
+
+            [JsonProperty("startAngle", NullValueHandling = NullValueHandling.Ignore)]
+            public int StartAngle { get; set; }
+
+            [JsonProperty("endAngle", NullValueHandling = NullValueHandling.Ignore)]
+            public int EndAngle { get; set; }
+
+            [JsonProperty("innerSize", NullValueHandling = NullValueHandling.Ignore)]
+            public string InnerSize { get; set; }
         }
 
         #endregion

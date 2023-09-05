@@ -1,6 +1,6 @@
-﻿@page "/PieChartView"
+﻿@page "/DonutChartView"
 
-<PageTitle>Pie Chart View</PageTitle>
+<PageTitle>Donut Chart View</PageTitle>
 
 <HighChartsContainer Id="HighCharts" />
 
@@ -34,13 +34,14 @@
                 {
                     Pie = new PlotOptions.Pies
                     {
-                        AllowPointSelect = true,
-                        Cursor = Cursor.Pointer,
+                        AllowPointSelect = false,
+                        //Cursor = Cursor.Pointer,
                         DataLabels = new PlotOptions.Pies.DataLabel
                         {
                             Enabled = true,
                             Format = "<b>{point.name}</b>: {point.percentage:.1f} %",
-                        }
+                        },
+                        InnerSize = "50%",
                     }
                 },
                 PieSeries = new List<PieSeries>()
@@ -55,8 +56,8 @@
                             {
                                  Name = "Chrome",
                                  Y = 70.67F,
-                                 Selected = true,
-                                 Sliced = true,
+                                 //Selected = true,
+                                 //Sliced = true,
                             },
                             new PieSeries.PieData
                             {
