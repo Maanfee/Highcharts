@@ -28,71 +28,73 @@ let selector;
 export function Generate(chartOptions, IsDefaultFont) {
 
     RemoveScript("_content/Maanfee.Highcharts/HighCharts.js");
+    RemoveScript("_content/Maanfee.Highcharts/Accessibility.js");
 
     // **************
     // Load HighCharts.js
     AddScript("_content/Maanfee.Highcharts/HighCharts.js").addEventListener('load', () => {
+        AddScript("_content/Maanfee.Highcharts/Accessibility.js").addEventListener('load', () => {
+            var obj = JSON.parse(chartOptions);
+            //alert(chartOptions);
 
-        var obj = JSON.parse(chartOptions);
-        //alert(chartOptions);
+            Highcharts.chart(selector, obj);
 
-        Highcharts.chart(selector, obj);
+            if (!IsDefaultFont) {
 
-        if (!IsDefaultFont) {
+                const fontFamily = window.getComputedStyle(document.getElementById(selector)).fontFamily;
 
-            const fontFamily = window.getComputedStyle(document.getElementById(selector)).fontFamily;
+                let AllHighcharts = document.getElementsByClassName('highcharts-root');
+                Array.from(AllHighcharts).forEach((el) => {
+                    el.style.fontFamily = fontFamily;
+                });
 
-            let AllHighcharts = document.getElementsByClassName('highcharts-root');
-            Array.from(AllHighcharts).forEach((el) => {
-                el.style.fontFamily = fontFamily;
-            });
+                //alert(fontFamily);
+            }
 
-            //alert(fontFamily);
-        }
+            //Highcharts.chart(selector, {
+            //    chart: {
+            //        type: chartType
+            //    },
+            //    title: {
+            //        text: obj["title"]["text"],
+            //        align: obj["title"]["align"],
+            //    },
+            //    subtitle: {
+            //        text: obj["subTitle"]["text"],
+            //        align: obj["subTitle"]["align"],
+            //    },
+            //    xAxis: {
+            //        categories: obj["xAxis"]["categories"],
+            //        crosshair: obj["xAxis"]["crosshair"],
+            //        accessibility: {
+            //            description: obj["xAxis"]["accessibility"]["description"],
+            //        }
+            //    },
+            //    yAxis: {
+            //        min: obj["yAxis"]["min"],
+            //        title: {
+            //            text: obj["yAxis"]["title"]["text"]
+            //        }
+            //    },
+            //    tooltip: {
+            //        valueSuffix: obj["tooltip"]["valueSuffix"],
+            //    },
+            //    plotOptions: {        
+            //        column: {
+            //            pointPadding: obj["plotOptions"]["column"]["pointPadding"],
+            //            borderWidth: obj["plotOptions"]["column"]["borderWidth"],
+            //        },
+            //        line: {
+            //            dataLabels: {
+            //                enabled: obj["plotOptions"]["line"]["dataLabels"]["enabled"],
+            //            },
+            //            enableMouseTracking: obj["plotOptions"]["line"]["enableMouseTracking"],
+            //        },
+            //    },
+            //    series: obj["series"]
+            //});
 
-        //Highcharts.chart(selector, {
-        //    chart: {
-        //        type: chartType
-        //    },
-        //    title: {
-        //        text: obj["title"]["text"],
-        //        align: obj["title"]["align"],
-        //    },
-        //    subtitle: {
-        //        text: obj["subTitle"]["text"],
-        //        align: obj["subTitle"]["align"],
-        //    },
-        //    xAxis: {
-        //        categories: obj["xAxis"]["categories"],
-        //        crosshair: obj["xAxis"]["crosshair"],
-        //        accessibility: {
-        //            description: obj["xAxis"]["accessibility"]["description"],
-        //        }
-        //    },
-        //    yAxis: {
-        //        min: obj["yAxis"]["min"],
-        //        title: {
-        //            text: obj["yAxis"]["title"]["text"]
-        //        }
-        //    },
-        //    tooltip: {
-        //        valueSuffix: obj["tooltip"]["valueSuffix"],
-        //    },
-        //    plotOptions: {        
-        //        column: {
-        //            pointPadding: obj["plotOptions"]["column"]["pointPadding"],
-        //            borderWidth: obj["plotOptions"]["column"]["borderWidth"],
-        //        },
-        //        line: {
-        //            dataLabels: {
-        //                enabled: obj["plotOptions"]["line"]["dataLabels"]["enabled"],
-        //            },
-        //            enableMouseTracking: obj["plotOptions"]["line"]["enableMouseTracking"],
-        //        },
-        //    },
-        //    series: obj["series"]
-        //});
-
+        });
     });
     // **************
 
