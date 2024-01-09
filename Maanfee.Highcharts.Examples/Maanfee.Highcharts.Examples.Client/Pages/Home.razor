@@ -1,0 +1,22 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
+@inject IServiceProvider Services
+@rendermode InteractiveWebAssembly
+
+<PageTitle>Home</PageTitle>
+
+<p>
+    <b>Environment:</b> @environmentName
+</p>
+
+@code {
+    private string environmentName;
+
+    protected override void OnInitialized()
+    {
+        if (Services.GetService<IWebAssemblyHostEnvironment>() is { } env)
+        {
+            environmentName = env.Environment;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 using Maanfee.Highcharts.Examples.Client.Pages;
 using Maanfee.Highcharts.Examples.Components;
+using Maanfee.Highcharts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+// HighCharts
+builder.Services.AddHighCharts();
 
 var app = builder.Build();
 

@@ -1,0 +1,86 @@
+﻿@page "/LineWithDataLabelsView"
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+<PageTitle>Line With Data Labels View</PageTitle>
+
+<HighChartsContainer Id="HighCharts" />
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var Config = new ChartConfiguration()
+            {
+                Chart = new ChartConfiguration.Charts
+                {
+                    Type = Maanfee.Highcharts.ChartType.Line,
+                },
+                Title = new Title()
+                {
+                    Text = "Corn vs wheat estimated production for 2023",
+                    Align = ChartAlign.Center,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                SubTitle = new SubTitle
+                {
+                    Text = "<p style='color:#DC143C'>Maanfee</p>",
+                    Align = ChartAlign.Center,
+                    VerticalAlign = ChartVerticalAlign.Top,
+                },
+                XAxis = new XAxis
+                {
+                    Categories = new List<object> { "USA", "China", "Brazil", "EU", "India", "Iran" },
+                    Crosshair = true,
+                    Accessibility = new XAxis.Accessibilities
+                    {
+                        Description = "Countries",
+                    }
+                },
+                YAxis = new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxis.AxisTitle
+                    {
+                        Text = "1000 metric tons (MT) !",
+                    }
+                },
+                Tooltip = new Tooltip
+                {
+                    ValueSuffix = " (1000 MT)",
+                },
+                PlotOptions = new PlotOptions
+                {
+                    Line = new PlotOptions.Lines
+                    {
+                        EnableMouseTracking = false,
+                        DataLabels = new PlotOptions.Lines.DataLabel
+                        {
+                            Enabled = true,
+                        }
+                    },
+                    Series = new PlotOptions.Seri  // ???
+                    {
+                        PointPlacement = ChartSeriesPointPlacement.On,
+                    },
+                },
+                LineSeries = new List<LineSeries>()
+                {
+                     new LineSeries
+                     {
+                          Name = "Corn",
+                          Data = new List<object> () { 406292, 260000, 107000, 68300, 27500, 406292 },
+                     },
+                     new LineSeries
+                     {
+                          Name = "Wheat",
+                          Data = new List<object> () { 51086, 136000, 5500, 141000, 107180, 206292 },
+                     },
+                },
+                //WindSpeed = 10,
+
+            };
+
+        await Chart.InitAsync("HighCharts").GenerateAsync<ChartConfiguration>(Config);
+    }
+
+}
