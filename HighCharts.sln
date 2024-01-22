@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maanfee.Highcharts", "Maanfee.Highcharts\Maanfee.Highcharts.csproj", "{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.csproj", "{E89F4B26-EC5F-43CA-9BDE-BD5ED50C5629}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.csproj", "{C1256B52-3769-4240-9D96-6671A227D3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples.Client", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.Client\Maanfee.Highcharts.Examples.Client.csproj", "{7D2C8275-79F2-4357-AD95-AD8961A06295}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples.Client", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.Client\Maanfee.Highcharts.Examples.Client.csproj", "{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E89F4B26-EC5F-43CA-9BDE-BD5ED50C5629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E89F4B26-EC5F-43CA-9BDE-BD5ED50C5629}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E89F4B26-EC5F-43CA-9BDE-BD5ED50C5629}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E89F4B26-EC5F-43CA-9BDE-BD5ED50C5629}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D2C8275-79F2-4357-AD95-AD8961A06295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D2C8275-79F2-4357-AD95-AD8961A06295}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D2C8275-79F2-4357-AD95-AD8961A06295}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D2C8275-79F2-4357-AD95-AD8961A06295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1256B52-3769-4240-9D96-6671A227D3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1256B52-3769-4240-9D96-6671A227D3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1256B52-3769-4240-9D96-6671A227D3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1256B52-3769-4240-9D96-6671A227D3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
