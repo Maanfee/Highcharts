@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33927.249
+VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maanfee.Highcharts", "Maanfee.Highcharts\Maanfee.Highcharts.csproj", "{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.csproj", "{97FAEDA8-B27B-4B6F-A35D-649F4FF41589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.csproj", "{C1256B52-3769-4240-9D96-6671A227D3E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples.Client", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.Client\Maanfee.Highcharts.Examples.Client.csproj", "{00FC8667-0604-4D7A-955A-581A773209CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts.Examples.Client", "Maanfee.Highcharts.Examples\Maanfee.Highcharts.Examples.Client\Maanfee.Highcharts.Examples.Client.csproj", "{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maanfee.Highcharts", "Maanfee.Highcharts\Maanfee.Highcharts.csproj", "{88471314-CB9D-0C8B-DF8B-3D617523D71F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{713A64AE-4C28-47A5-9AAA-C6F334AAEE7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1256B52-3769-4240-9D96-6671A227D3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1256B52-3769-4240-9D96-6671A227D3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1256B52-3769-4240-9D96-6671A227D3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1256B52-3769-4240-9D96-6671A227D3E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E04EB5FC-FA5B-4017-9460-E01AAE6D666E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97FAEDA8-B27B-4B6F-A35D-649F4FF41589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FAEDA8-B27B-4B6F-A35D-649F4FF41589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FAEDA8-B27B-4B6F-A35D-649F4FF41589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FAEDA8-B27B-4B6F-A35D-649F4FF41589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00FC8667-0604-4D7A-955A-581A773209CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00FC8667-0604-4D7A-955A-581A773209CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00FC8667-0604-4D7A-955A-581A773209CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00FC8667-0604-4D7A-955A-581A773209CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88471314-CB9D-0C8B-DF8B-3D617523D71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88471314-CB9D-0C8B-DF8B-3D617523D71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88471314-CB9D-0C8B-DF8B-3D617523D71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88471314-CB9D-0C8B-DF8B-3D617523D71F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3F9C5479-AA85-427E-93BB-135C1558B871}
+		SolutionGuid = {A2AD74FD-9508-41F9-9452-577BDDE64854}
 	EndGlobalSection
 EndGlobal
