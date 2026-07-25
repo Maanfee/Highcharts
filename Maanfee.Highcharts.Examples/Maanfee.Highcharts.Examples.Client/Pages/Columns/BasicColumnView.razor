@@ -1,5 +1,4 @@
 ﻿@page "/BasicColumnView"
-@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 
 <PageTitle>Basic Column View</PageTitle>
 
@@ -7,66 +6,77 @@
 
 @code {
 
-    protected override async Task OnInitializedAsync()
+    private bool _isInitialized = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !_isInitialized)
+        {
+            _isInitialized = true;
+            await InitializeChart();
+        }
+    }
+
+    private async Task InitializeChart()
     {
         var Config = new ChartConfiguration()
+        {
+            Chart = new ChartConfiguration.Charts
             {
-                Chart = new ChartConfiguration.Charts
+                Type = Maanfee.Highcharts.ChartType.Column,
+                //Style = new ChartConfiguration.Charts.Styles
+                //{
+                //    FontFamily = "BYekan",
+                //},
+            },
+            Title = new Title()
+            {
+                Text = "Corn vs wheat estimated production for 2023",
+                //Text = "تست فونت فارسی",
+                Align = ChartAlign.Center,
+                VerticalAlign = ChartVerticalAlign.Top,
+            },
+            SubTitle = new SubTitle
+            {
+                Text = "<p style='color:#DC143C'>Maanfee</p>",
+                Align = ChartAlign.Center,
+                VerticalAlign = ChartVerticalAlign.Top,
+            },
+            XAxis = new XAxis
+            {
+                Categories = new List<object> { "USA", "China", "Brazil", "EU", "India", "Iran" },
+                Crosshair = true,
+                Accessibility = new XAxis.Accessibilities
                 {
-                    Type = Maanfee.Highcharts.ChartType.Column,
-                    //Style = new ChartConfiguration.Charts.Styles
-                    //{
-                    //    FontFamily = "BYekan",
-                    //},
-                },
-                Title = new Title()
+                    Description = "Countries",
+                }
+            },
+            YAxis = new YAxis
+            {
+                Min = 0,
+                Title = new YAxis.AxisTitle
                 {
-                    Text = "Corn vs wheat estimated production for 2023",
-                    //Text = "تست فونت فارسی",
-                    Align = ChartAlign.Center,
-                    VerticalAlign = ChartVerticalAlign.Top,
-                },
-                SubTitle = new SubTitle
+                    Text = "1000 metric tons (MT) !",
+                }
+            },
+            Tooltip = new Tooltip
+            {
+                ValueSuffix = " (1000 MT)",
+            },
+            PlotOptions = new PlotOptions
+            {
+                Column = new PlotOptions.Columns
                 {
-                    Text = "<p style='color:#DC143C'>Maanfee</p>",
-                    Align = ChartAlign.Center,
-                    VerticalAlign = ChartVerticalAlign.Top,
-                },
-                XAxis = new XAxis
-                {
-                    Categories = new List<object> { "USA", "China", "Brazil", "EU", "India", "Iran" },
-                    Crosshair = true,
-                    Accessibility = new XAxis.Accessibilities
+                    PointPadding = 0.2F,
+                    BorderWidth = 1,
+                    ColorByPoint = false,
+                    DataLabels = new PlotOptions.Columns.DataLabel
                     {
-                        Description = "Countries",
+                        Enabled = true,
                     }
                 },
-                YAxis = new YAxis
-                {
-                    Min = 0,
-                    Title = new YAxis.AxisTitle
-                    {
-                        Text = "1000 metric tons (MT) !",
-                    }
-                },
-                Tooltip = new Tooltip
-                {
-                    ValueSuffix = " (1000 MT)",
-                },
-                PlotOptions = new PlotOptions
-                {
-                    Column = new PlotOptions.Columns
-                    {
-                        PointPadding = 0.2F,
-                        BorderWidth = 1,
-                        ColorByPoint = false,
-                        DataLabels = new PlotOptions.Columns.DataLabel
-                        {
-                            Enabled = true,
-                        }
-                    },
-                },
-                ColumnSeries = new List<ColumnSeries>()
+            },
+            ColumnSeries = new List<ColumnSeries>()
                 {
                      new ColumnSeries
                      {
@@ -80,7 +90,7 @@
                      },
                 },
 
-            };
+        };
 
         await Chart.InitAsync("HighCharts").GenerateAsync<ChartConfiguration>(Config, false);
     }

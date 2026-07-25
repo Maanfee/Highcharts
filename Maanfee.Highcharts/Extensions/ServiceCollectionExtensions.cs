@@ -6,7 +6,7 @@ namespace Maanfee.Highcharts
     {
         public static IServiceCollection AddHighCharts(this IServiceCollection services)
         {
-            services.AddScoped<Chart>();
+            services.AddScoped<ChartService>();
 
             return services;
         }

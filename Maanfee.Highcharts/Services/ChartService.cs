@@ -4,11 +4,11 @@ using System.Text.Json;
 
 namespace Maanfee.Highcharts
 {
-    public class Chart : ComponentBase, IAsyncDisposable
+    public class ChartService : ComponentBase, IAsyncDisposable
     {
         #region - JsRuntime -
 
-        public Chart(IJSRuntime JsRuntime)
+        public ChartService(IJSRuntime JsRuntime)
         {
             moduleTask = new(() => JsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Maanfee.Highcharts/JsInterop.js").AsTask());
         }
@@ -29,7 +29,7 @@ namespace Maanfee.Highcharts
 
         // ************************************************
 
-        public async Task<Chart> InitAsync(string Selector)
+        public async Task<ChartService> InitAsync(string Selector)
         {
             var Module = await moduleTask.Value;
 

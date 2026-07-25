@@ -1,6 +1,6 @@
-using Maanfee.Highcharts.Examples.Client.Pages;
-using Maanfee.Highcharts.Examples.Components;
 using Maanfee.Highcharts;
+using Maanfee.Highcharts.Examples.Components;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,7 @@ builder.Services.AddRazorComponents()
 
 // HighCharts
 builder.Services.AddHighCharts();
+builder.Services.AddMudServices();
 
 var app = builder.Build();
 

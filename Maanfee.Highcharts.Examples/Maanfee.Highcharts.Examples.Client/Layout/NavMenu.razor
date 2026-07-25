@@ -1,60 +1,18 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Maanfee Highcharts</a>
-    </div>
-</div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="ColumnAndBarChartsView" Match="NavLinkMatch.All">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Column and bar Charts
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="LineChartsView" Match="NavLinkMatch.All">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Line Charts
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="PieChartsView" Match="NavLinkMatch.All">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Pie Charts
-            </NavLink>
-        </div>
-        @* *********************************************************** *@
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-        @* *********************************************************** *@
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="RenderMode">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Render Mode
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Rendermode2">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> InteractiveServer
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Rendermode3">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> InteractiveWebAssembly
-            </NavLink>
-        </div>
-    </nav>
-</div>
+﻿<MudPaper Width="250px" Class="d-inline-flex py-3" Elevation="0">
+    <MudNavMenu Class="mud-width-full">
+        <MudText Typo="Typo.h6" Class="px-4">Maanfee Highcharts</MudText>
+        <MudDivider Class="my-2" />
+        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Dashboard">Home</MudNavLink>
+        <MudNavGroup Title="Column and bar Charts" Icon="@Icons.Material.Filled.BarChart" Expanded="true">
+            <MudNavLink Href="/BasicColumnView" IconColor="Color.Success">Basic Column</MudNavLink>
+        </MudNavGroup>
+        <MudNavGroup Title="Line Charts" Icon="@Icons.Material.Filled.ShowChart" Expanded="true">
+            <MudNavLink Href="/LineWithDataLabelsView" IconColor="Color.Success">With data labels</MudNavLink>
+        </MudNavGroup>
+        <MudNavGroup Title="Pie Charts" Icon="@Icons.Material.Filled.PieChart" Expanded="true">
+            <MudNavLink Href="/PieChartView" IconColor="Color.Success">Pie Chart</MudNavLink>
+            <MudNavLink Href="/DonutChartView" IconColor="Color.Success">Donut Chart View</MudNavLink>
+            <MudNavLink Href="/SemiCircleDonutView" IconColor="Color.Success">Semi Circle Donut Chart</MudNavLink>
+        </MudNavGroup>
+    </MudNavMenu>
+</MudPaper>

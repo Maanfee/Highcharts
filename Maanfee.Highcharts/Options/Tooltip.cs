@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-
-namespace Maanfee.Highcharts
+﻿namespace Maanfee.Highcharts
 {
     public class Tooltip
     {
-        [JsonProperty("valueSuffix", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueSuffix { get; set; }
     }
 }
