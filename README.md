@@ -1,27 +1,16 @@
+# Maanfee.Highcharts
 
-<div align="center">
-  <picture>
-    <img alt="Maanfee" src="SolutionItems/Contents/Logo.png">
-  </picture>
-  <h2 align="center">
-    Highcharts for Blazor
-  </h2>
-  <p align="center">
-    Open source solution template for Blazor Web-Assembly  built with MudBlazor
-  </p>
-  <div>
-      <a href="https://github.com/Maanfee/Maanfee-Dashboard/blob/main/LICENSE" target="_blank">
-        <img src="SolutionItems/Contents/license.svg" />
-      </a>
-      <a href="https://www.linkedin.com/in/mansour-farshidi-091a41185/" target="_blank">
-        <img src="SolutionItems/Contents/linkedin.svg" />
-      </a>    
- </div>
-</div>
+A powerful .NET wrapper for Highcharts visualization library, designed for Blazor applications. This package provides a strongly-typed C# interface for creating interactive and customizable charts with minimal code.
 
-## Screenshots 
-![Screenshots](SolutionItems/Screenshots/Dashboard.png)
+[![NuGet Version](https://img.shields.io/nuget/v/Maanfee.Highcharts.svg)](https://www.nuget.org/packages/Maanfee.Highcharts/)
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## Features
 
-
- 
+- **Blazor Integration**: Seamless integration with Blazor Server and WebAssembly
+- **Strongly Typed**: Full IntelliSense support with C# classes
+- **Multiple Chart Types**: Support for Column, Line, and Pie charts
+- **Customizable**: Extensive configuration options for titles, axes, tooltips, and more
+- **Responsive**: Automatically adapts to container size
+- **Lightweight**: Minimal dependencies
