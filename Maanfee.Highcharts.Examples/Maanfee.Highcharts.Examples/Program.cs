@@ -11,6 +11,7 @@ builder.Services.AddRazorComponents()
 
 // HighCharts
 builder.Services.AddHighCharts();
+// Mudblazor
 builder.Services.AddMudServices();
 
 var app = builder.Build();
